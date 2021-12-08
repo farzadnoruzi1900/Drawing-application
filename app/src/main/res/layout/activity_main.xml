@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ib_brush_size_dialog"
+        app:layout_constraintBottom_toTopOf="@+id/ll_ib_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fl_drawing_view_container">
@@ -124,23 +124,39 @@
             android:tag="@color/white"
             android:onClick="colorClickOn"/>
     </LinearLayout>
-    we are gonna use this tag in the code later in order to know which
+   <!-- we are gonna use this tag in the code later in order to know which
     bottom is selected and change the color of strock and drawable we define
     in other case we have to define id and then we have to declare individually
-    for all our imageButton setOnClickListener .
-
-    <ImageButton
-        android:id="@+id/ib_brush_size_dialog"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="5dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_brush"
+    for all our imageButton setOnClickListener -->
+    <LinearLayout
+        android:id="@+id/ll_ib_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_color_ib" />
-    <!--    scaleType help our dialog to fit accordingly with the screen size-->
+        app:layout_constraintTop_toBottomOf="@+id/ll_color_ib">
+        <ImageButton
+            android:id="@+id/ib_gallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_gallery"/>
+        <ImageButton
+            android:id="@+id/ib_brush_size_dialog"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_brush"
+             />
+        <!--    scaleType help our dialog to fit accordingly with the screen size-->
+
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
