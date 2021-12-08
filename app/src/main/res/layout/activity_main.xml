@@ -12,12 +12,120 @@
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:background="@drawable/background_drwing_view_layout"
+        app:layout_constraintBottom_toTopOf="@+id/ll_color_ib"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_color_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ib_brush_size_dialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/black"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/black"
+            android:onClick="colorClickOn"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/random"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/random"
+            android:onClick="colorClickOn"/>
+        <!--we call this random because we are gonna do it in a way that whenever we click on it it gives us a random
+        color-->
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/blue"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/blue"
+            android:onClick="colorClickOn"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/green"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/green"
+            android:onClick="colorClickOn"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/lollipop"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/lollipop"
+            android:onClick="colorClickOn"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/yellow"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/yellow"
+            android:onClick="colorClickOn"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/red"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/red"
+            android:onClick="colorClickOn"/>
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/skin"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/skin"
+            android:onClick="colorClickOn"/>
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white"
+            android:src="@drawable/pallet_normal"
+            android:tag="@color/white"
+            android:onClick="colorClickOn"/>
+    </LinearLayout>
+    we are gonna use this tag in the code later in order to know which
+    bottom is selected and change the color of strock and drawable we define
+    in other case we have to define id and then we have to declare individually
+    for all our imageButton setOnClickListener .
+
+    <ImageButton
+        android:id="@+id/ib_brush_size_dialog"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_brush"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-    </com.example.kiddrawing.Drawview>
+        app:layout_constraintTop_toBottomOf="@+id/ll_color_ib" />
+    <!--    scaleType help our dialog to fit accordingly with the screen size-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,21 +14,14 @@ class Drawview(context: Context, attr: AttributeSet) : View(context, attr) {
     private var mDrawPaint: Paint? = null
     private var mConvasPaint: Paint? = null
     private var mBrushSize: Float = 0.toFloat()
-    private val color = Color.BLACK
+    private var color = Color.BLACK
     private var canvas: Canvas? = null
     private val mpaths=ArrayList<CustomPath>()
 
     init {
         setUpDrawing()
     }
-    /*we can not assign the value we get as parameter directly to the brush size because in this
-    case it can not adjust it self on different screen and devices which are gonna use this app
-    so we use this method called TypedValue.applyDimension()*/
-fun setBrushSize(size : Float){
-    mBrushSize=TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,size,
-    resources.displayMetrics)
-        mDrawPaint!!.strokeWidth=mBrushSize
-}
+
     /*
         The Paint class holds the style and color information about how to draw geometries, text and bitmaps
     */
@@ -108,7 +101,19 @@ fun setBrushSize(size : Float){
 
     }
 
+    /*we can not assign the value we get as parameter directly to the brush size because in this
+    case it can not adjust it self on different screen and devices which are gonna use this app
+    so we use this method called TypedValue.applyDimension()*/
+    fun setBrushSize(size : Float){
+        mBrushSize=TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,size,
+            resources.displayMetrics)
+        mDrawPaint!!.strokeWidth=mBrushSize
+    }
 
+    fun setBrushColor(newColor: String){
+        color=Color.parseColor(newColor)
+        mDrawPaint!!.color=color
+    }
     internal inner class CustomPath(var colokr: Int, var brushthickness: Float) : Path() {
 
     }
